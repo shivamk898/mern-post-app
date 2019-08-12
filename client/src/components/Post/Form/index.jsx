@@ -31,7 +31,7 @@ class Form extends React.Component {
     const { title, body, author } = this.state;
 
     if(!postToEdit) {
-      return axios.post('https://newreactapps.herokuapp.com/api/posts', {
+      return axios.post('https://mern-post-app.herokuapp.com/api/posts', {
         title,
         body,
         author,
@@ -39,7 +39,7 @@ class Form extends React.Component {
         .then((res) => onSubmit(res.data))
         .then(() => this.setState({ title: '', body: '', author: '' }));
     } else {
-      return axios.patch(`https://newreactapps.herokuapp.com/api/posts/${postToEdit._id}`, {
+      return axios.patch(`https://mern-post-app.herokuapp.com/api/posts/${postToEdit._id}`, {
         title,
         body,
         author,

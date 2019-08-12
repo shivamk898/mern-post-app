@@ -17,14 +17,14 @@ class Home extends React.Component {
   componentDidMount() {
     const { onLoad } = this.props;
 
-    axios('https://newreactapps.herokuapp.com/api/posts')
+    axios('https://mern-post-app.herokuapp.com/api/posts')
       .then((res) => onLoad(res.data));
   }
 
   handleDelete(id) {
     const { onDelete } = this.props;
 
-    return axios.delete(`https://newreactapps.herokuapp.com/api/posts/${id}`)
+    return axios.delete(`https://mern-post-app.herokuapp.com/api/posts/${id}`)
       .then(() => onDelete(id));
   }
 
