@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
 if(process.env.NODE_ENV === 'production'){
-	app.use(express.static('client/dist'));
+	app.use(express.static('client/build'));
 }
 
 // Add models
